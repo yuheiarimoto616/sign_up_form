@@ -18,7 +18,7 @@ body {
 header {
     flex: 1 0 38vw;
     background-image: url(images/bgimg.jpg);
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
 }
 
@@ -84,6 +84,14 @@ form h2 {
     width: 220px;
     height: 16px;
     padding: 4px;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+}
+
+.inputs div input:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 3px 3px 3px lightgrey;
 }
 
 .inputs div label {
@@ -114,5 +122,34 @@ form > p {
     font-weight: 800;
 }
 
+input[type="password"]:invalid {
+    border: 1px darkred solid;
+}
 
+input[id="pwd"]:invalid + span::before {
+    content: "*Passwords do not match";
+    font-size: 12px;
+    color: darkred;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        flex: 1 0 15vh;
+    }
+
+    header div {
+        position: static;
+    }
+
+    main {
+        background-color: rgb(245, 245, 245);
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
 
